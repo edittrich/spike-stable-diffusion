@@ -1,2 +1,6 @@
-models/ldm/stable-diffusion-v1/
+/latent_diffusion.egg-info/
 logs/
+/models/ldm/stable-diffusion-v1/
+/outputs/
+/src/
+
