@@ -2,4 +2,5 @@
 logs/
 /models/ldm/stable-diffusion-v1/
 /outputs/
+__pycache__/
 /src/
