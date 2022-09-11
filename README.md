@@ -23,6 +23,9 @@ python optimizedSD/optimized_txt2img.py --prompt "Cyberpunk style image of a Tes
 
 conda deactivate
 conda env remove -n ldm
+
+cd ..
+rm -rf spike-stable-diffusion
 ```
 
 # Stable Diffusion
