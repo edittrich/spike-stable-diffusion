@@ -1,3 +1,30 @@
+# Stable Diffusion Commands
+
+[Optimized Stable Diffusion](https://github.com/basujindal/stable-diffusion)
+```
+nvidia-smi
+
+cd /home/edittrich/Documents/workspaces/git/
+git clone https://github.com/edittrich/spike-stable-diffusion.git
+cd spike-stable-diffusion
+
+conda env create -f environment.yaml
+conda activate ldm
+
+huggingface-cli login
+
+mkdir -p models/ldm/stable-diffusion-v1/
+# Original link with authentication required https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/resolve/main/sd-v1-4.ckpt
+curl https://www.googleapis.com/storage/v1/b/aai-blog-files/o/sd-v1-4.ckpt?alt=media >sd-v1-4.ckpt
+ln -s /home/edittrich/Documents/workspaces/git/spike-stable-diffusion/models/ldm/stable-diffusion-v1/sd-v1-4.ckpt models/ldm/stable-diffusion-v1/model.ckpt
+
+python scripts/txt2img.py --prompt "a photograph of an astronaut riding a horse" --plms 
+python optimizedSD/optimized_txt2img.py --prompt "Cyberpunk style image of a Tesla car reflection in rain" --H 512 --W 512 --seed 27 --n_iter 2 --n_samples 5 --ddim_steps 50
+
+conda deactivate
+conda env remove -n ldm
+```
+    
 # Stable Diffusion
 *Stable Diffusion was made possible thanks to a collaboration with [Stability AI](https://stability.ai/) and [Runway](https://runwayml.com/) and builds upon our previous work:*
 
