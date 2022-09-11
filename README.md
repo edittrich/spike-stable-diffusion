@@ -18,8 +18,8 @@ mkdir -p models/ldm/stable-diffusion-v1/
 curl https://www.googleapis.com/storage/v1/b/aai-blog-files/o/sd-v1-4.ckpt?alt=media >sd-v1-4.ckpt
 ln -s /home/edittrich/Documents/workspaces/git/spike-stable-diffusion/models/ldm/stable-diffusion-v1/sd-v1-4.ckpt models/ldm/stable-diffusion-v1/model.ckpt
 
-python scripts/txt2img.py --prompt "a photograph of an astronaut riding a horse" --plms 
-python optimizedSD/optimized_txt2img.py --prompt "Cyberpunk style image of a Tesla car reflection in rain" --H 512 --W 512 --seed 27 --n_iter 2 --n_samples 5 --ddim_steps 50
+python scripts/txt2img.py --prompt "a photograph of an astronaut riding a horse" --plms
+python optimizedSD/optimized_txt2img.py --prompt "Cyberpunk style image of a Tesla car reflection in rain" --H 512 --W 512 --seed 27 --n_iter 2 --n_samples 5 --ddim_steps 50 --precision full
 
 conda deactivate
 conda env remove -n ldm
